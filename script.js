@@ -16,52 +16,50 @@ let body = document.getElementsByTagName('body')[0]
 
 
 let tableData;
-async function fetchData(){
-
-    let json= await fetch('./data.json').then((response) => response.json())
-        for(let m=0;m<json.length;m++){
-        let id,name,standard,email,marks,gender,passing;
-            tr=document.createElement('tr');
-            tdid=document.createElement('td');
-            tdname=document.createElement('td');
-            tdgender=document.createElement('td');
-            tdstandard=document.createElement('td');
-            tdmarks=document.createElement('td');
-            tdpassing=document.createElement('td');
-            tdemail=document.createElement('td');
-            id=json[m].id;
-            name=json[m].first_name+" "+json[m].last_name;
-            gender=json[m].gender;
-            standard=json[m].class;
-            marks=json[m].marks;
-            if (json[m].passing==true){
-                passing="passed";
-            }
-            else{
-                passing="failed";
-            }
-            email=json[m].email;
-            tdid.innerText=id;
-            tdname.innerText=name   ;
-            tdgender.innerText=gender;
-            tdstandard.innerText=standard;
-            tdmarks.innerText=marks;
-            tdpassing.innerText=passing;
-            tdemail.innerText=email;  
-            tr.appendChild(tdid);
-            tr.appendChild(tdname);
-            tr.appendChild(tdgender);
-            tr.appendChild(tdstandard);
-            tr.appendChild(tdmarks);
-            tr.appendChild(tdpassing);
-            tr.appendChild(tdemail);
-            tableBody.appendChild(tr);
-        
+fetch('./data.json').then((response) => response.json())
+.then((json) =>     
+    {
+    for(let m=0;m<json.length;m++){
+    let id,name,standard,email,marks,gender,passing;
+        tr=document.createElement('tr');
+        tdid=document.createElement('td');
+        tdname=document.createElement('td');
+        tdgender=document.createElement('td');
+        tdstandard=document.createElement('td');
+        tdmarks=document.createElement('td');
+        tdpassing=document.createElement('td');
+        tdemail=document.createElement('td');
+        id=json[m].id;
+        name=json[m].first_name+" "+json[m].last_name;
+        gender=json[m].gender;
+        standard=json[m].class;
+        marks=json[m].marks;
+        if (json[m].passing==true){
+            passing="passed";
+        }
+        else{
+            passing="failed";
+        }
+        email=json[m].email;
+        tdid.innerText=id;
+        tdname.innerText=name   ;
+        tdgender.innerText=gender;
+        tdstandard.innerText=standard;
+        tdmarks.innerText=marks;
+        tdpassing.innerText=passing;
+        tdemail.innerText=email;  
+        tr.appendChild(tdid);
+        tr.appendChild(tdname);
+        tr.appendChild(tdgender);
+        tr.appendChild(tdstandard);
+        tr.appendChild(tdmarks);
+        tr.appendChild(tdpassing);
+        tr.appendChild(tdemail);
+        tableBody.appendChild(tr);
     }
-    
-    ;
 }
-fetchData()
+
+);
 let searchText = document.getElementById("search");
 const searchBtn = document.getElementById("searchBtn");
 let sortAtoZ = document.getElementById("sortAtoZ");
