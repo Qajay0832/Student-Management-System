@@ -1,0 +1,36 @@
+/* .table{
+    height:100vh
+} */
+.navHeading{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.input-group>.form-control{
+    border:1px solid black;
+    border-radius: none;
+}
+.tableContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 10px;
+}
+.searchContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.searchBar{
+    width:100%;
+}
+.button{
+    width:140px;
+    height: 38px;
+    background-color: black;
+    color: white;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
